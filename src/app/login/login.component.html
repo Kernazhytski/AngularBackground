@@ -11,14 +11,15 @@
 </head>
 <body>
 <div *ngIf="isLoggedIn; else loggedOut">
-  Logged in as {{roles}}.
+  Logged in as {{roles}}.<br>
+  <a href="http://localhost:4200/table"><button class="button_1">Get back to the table</button></a>
 </div>
 <ng-template #loggedOut>
 <div class="parent" name="form" >
   <div class="center">
     <h1>Login Page</h1>
     <h5>Enter login and password to access</h5>
-    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
       <label for="username">Login</label>
       <input type="text" class="input" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
              required  >
@@ -27,8 +28,8 @@
       <input type="text"  class="input" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
              required >
       <br/>
-      <div class="form-group">
-        <button class="button_1">Login</button>
+      <div class="form-group" >
+       <button href="http://localhost:4200/table" class="button_1">Login</button>
         <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
           Login failed: {{errorMessage}}
         </div>

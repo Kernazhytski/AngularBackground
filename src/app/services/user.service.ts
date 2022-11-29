@@ -7,9 +7,9 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UserService {
 
-  private tableUrl = 'http://localhost:8080/api/table';
-  private addUrl = 'http://localhost:8080/api/table/edit';
-  private editUrl = 'http://localhost:8080/api/test/add';
+  private tableUrl = 'http://localhost:8080/table';
+  private addUrl = 'http://localhost:8080/table/edit';
+  private editUrl = 'http://localhost:8080/table/add';
 
   constructor(private http: HttpClient) { }
 

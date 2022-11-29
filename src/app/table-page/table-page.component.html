@@ -5,7 +5,7 @@
     <strong>Roles:</strong> {{info.roles}} <br/>
     <strong>Token:</strong> {{info.token}} <br/>
   </p>
-  <button class="btn btn-secondary" (click)="logout()">Logout</button>
+  <a href="http://localhost:4200/auth/login"><button class="btn btn-secondary"  (click)="logout()">Logout</button></a>
 </div>
 
 <ng-template #loggedOut>
