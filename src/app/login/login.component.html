@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    label {
+      display: inline-block;
+      width: 125px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}.
+</div>
+<ng-template #loggedOut>
+<div class="parent" name="form" >
+  <div class="center">
+    <h1>Login Page</h1>
+    <h5>Enter login and password to access</h5>
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <label for="username">Login</label>
+      <input type="text" class="input" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
+             required  >
+      <br/>
+      <label for="password">Password</label>
+      <input type="text"  class="input" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+             required >
+      <br/>
+      <div class="form-group">
+        <button class="button_1">Login</button>
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          Login failed: {{errorMessage}}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</ng-template>
+</body>
+</html>
