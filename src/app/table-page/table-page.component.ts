@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "../auth/token-storage.service";
+import { Probe } from '../entities/Probe';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-table-page',
@@ -8,15 +10,27 @@ import {TokenStorageService} from "../auth/token-storage.service";
 })
 export class TablePageComponent implements OnInit{
   info: any;
+  probes!: Probe[];
+  errorMessage!: string;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService,private userService: UserService) { }
 
   ngOnInit(): void {
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
+      roles: this.token.getAuthorities()
     };
+
+    this.userService.getProbesBoard().subscribe(
+      data =>{
+        this.probes = data;
+        console.log(this.probes, data)
+      },
+      error => {
+        this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
+      }
+    )
   }
 
   logout() {

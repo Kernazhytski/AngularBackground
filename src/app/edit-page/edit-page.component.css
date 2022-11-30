@@ -1,0 +1,94 @@
+.center {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  align-content: center;
+  width: 30%;
+  height: 70%;
+
+}
+.parent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+.input{
+  border-radius: 5px 5px 5px 5px;
+  position: absolute;
+  width: 200px;
+  right: 30%;
+}
+
+.input2{
+  border-radius: 5px 5px 5px 5px;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  right: 30%;
+  resize: none;
+}
+
+.button_1{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  float: bottom;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button_2{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  float: bottom;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.lable1{
+  display: inline-block;
+  font-weight: 1000;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.littlelable{
+  display: inline-block;
+  font-weight: 1000;
+  font-size: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+.select{
+  border-radius: 5px 5px 5px 5px;
+  float: right;
+  width: 78px;
+  margin-right: 15px;
+}
+
+.select2{
+  border-radius: 5px 5px 5px 5px;
+  float: right;
+  width: 78px;
+  margin-right: 135px;
+}
+
+.select3{
+  border-radius: 5px 5px 5px 5px;
+  position: absolute;
+  width: 210px;
+  right: 30%;
+}

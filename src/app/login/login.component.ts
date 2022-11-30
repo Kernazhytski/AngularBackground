@@ -3,6 +3,9 @@ import {AuthLoginInfo} from "../auth/login-info";
 import {AuthService} from "../auth/auth.service";
 import {TokenStorageService} from "../auth/token-storage.service";
 import {FormsModule} from "@angular/forms";
+import {TablePageComponent} from '../table-page/table-page.component'
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -18,7 +21,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo | undefined;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -60,7 +63,7 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-    window.location.reload();
+    this.router.navigate(['/table']);
   }
 
 }

@@ -1,1 +1,59 @@
-<p>edit-page works!</p>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <style>
+    label {
+      display: inline-block;
+      font-weight: 1000;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="parent" name="form" >
+  <div class="center">
+    <label class="lable1">Edit</label>
+    <form>
+      <label for="username">Name*</label>
+      <input type="text" class="input" id="username" name="username">
+
+      <br>
+
+      <label for="model">Model*</label>
+      <input type="text" class="input" id="model" name="model">
+
+      <br>
+
+      <label>Range</label>
+      <input type="number" step="1" min="1" value="45" id="range_to" name="range-to" class="select2"/>
+      <label class="littlelable" for="range_to">To</label>
+      <input type="number" step="1" min="1" value="15" id="range_from" name="range-to" class="select"/>
+      <label class="littlelable" for="range_from">From</label>
+
+      <br>
+
+      <label for="type">Type*</label>
+      <select type="number" step="1" min="1" value="45" id="type" name="type" class="select3"></select>
+
+      <br>
+
+      <label for="unit">Unit*</label>
+      <select type="number" step="1" min="1" value="45" id="unit" name="unit" class="select3"></select>
+
+      <br>
+
+      <label for="location">Location</label>
+      <input type="text" class="input" id="location" name="location">
+
+      <br>
+
+      <label for="discription">Description</label>
+      <textarea type="text" class="input2" id="discription" name="discription"></textarea>
+
+      <button class="button_1">Save</button>
+      <button class="button_2">Cancel</button>
+
+    </form>
+  </div>
+</div>
+</body>
