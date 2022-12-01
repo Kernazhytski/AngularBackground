@@ -13,6 +13,7 @@ export class UserService {
   private tableUrl = 'http://localhost:8088/api/table';
   private editUrl = 'http://localhost:8088/api/table/edit/';
   private addUrl = 'http://localhost:8088/api/table/add';
+  private delUrl = 'http://localhost:8088/api/table/delete/';
 
   constructor(private http: HttpClient,private token: TokenStorageService) { }
 
@@ -30,11 +31,15 @@ export class UserService {
   }
 
   putEditBoard(probe:any, id:number){
-    console.log('Post')
     this.http.post(this.editUrl+id,probe).subscribe()
   }
 
   putAddBoard(probe: Probe){
-    return this.http.post(this.addUrl,probe).subscribe();
+    this.http.post(this.addUrl,probe).subscribe();
+  }
+
+  deleteProbe(id:number){
+    console.log("ssssss")
+    this.http.delete(this.delUrl+id).subscribe();
   }
 }

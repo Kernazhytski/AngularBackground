@@ -1,38 +1,74 @@
 <div class="parent" *ngIf="info.token; else loggedOut">
-  <div class="center">
-    <label class="lable1">Add</label>
 
-    <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
-    <p>adas</p>
-    <table  class="table1">
-      <tr>
-        <th class="invisTable"></th>
-        <th class="th1">Name</th>
-        <th class="th1">Model</th>
-        <th class="th1">Type</th>
-        <th class="th1">Range</th>
-        <th class="th1">Unit</th>
-        <th class="th1">Location</th>
-        <th class="invisTable"></th>
-      </tr>
-      <tr *ngFor="let probe of probes">
-        <td class="invisTable"></td>
-        <td class="th1"><a href="http://localhost:4200/table/edit/{{probe.id}}">{{probe.name}}</a></td>
-        <td class="th1">{{probe.model}}</td>
-        <td class="th1">{{probe.type}}</td>
-        <td class="th1">{{probe.range_from}}-{{probe.range_to}}</td>
-        <td class="th1">{{probe.unit}}</td>
-        <td class="th1">{{probe.location}}</td>
-        <td class="invisTable"></td>
-      </tr>
-    </table>
+  <div *ngIf="info.roles == 'ROLE_ADMIN'; else userP">
+    <div class="center">
+      <label class="lable1">Add</label>
+      <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
 
-    <a href="http://localhost:4200/table/add"><button class="button_1">Add Sensor</button></a>
+      <input placeholder="enter text to search" class="input_s" #searchInput> <button (click)="search(searchInput.value)" class="button_search"><img width="20" height="20"src="assets/pictures/search.png">Search</button>
+<br><br><br><br>
+      <table  class="table1">
+        <tr>
+          <th class="invisTable"></th>
+          <th class="th1">Name</th>
+          <th class="th1">Model</th>
+          <th class="th1">Type</th>
+          <th class="th1">Range</th>
+          <th class="th1">Unit</th>
+          <th class="th1">Location</th>
+          <th class="invisTable"></th>
+        </tr>
+        <tr *ngFor="let probe of probes">
+          <td class="invisTable"><a href="http://localhost:4200/table/edit/{{probe.id}}"><img width="25" height="25" src="assets/pictures/edit.png"></a></td>
+          <td class="th1"><div class="tooltip"><span class="tooltiptext">{{probe.description}}</span>{{probe.name}}</div></td>
+          <td class="th1">{{probe.model}}</td>
+          <td class="th1">{{probe.type}}</td>
+          <td class="th1">{{probe.range_from}}-{{probe.range_to}}</td>
+          <td class="th1">{{probe.unit}}</td>
+          <td class="th1">{{probe.location}}</td>
+          <td class="invisTable"><a (click)="delete(probe.id)"><img width="25" height="25"src="assets/pictures/delete.png" ></a></td>
+        </tr>
+      </table>
+
+      <a href="http://localhost:4200/table/add"><button class="button_1">Add Sensor</button></a>
 
 
 
+    </div>
   </div>
+
+
+  <ng-template #userP>
+    <div class="center">
+      <label class="lable1">Add</label>
+      <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
+      <input placeholder="enter text to search" class="input_s" #searchInput> <button (click)="search(searchInput.value)" class="button_search"><img width="20" height="20"src="assets/pictures/search.png">Search</button>
+      <br><br><br><br>
+      <table  class="table1">
+        <tr>
+          <th class="th1">Name</th>
+          <th class="th1">Model</th>
+          <th class="th1">Type</th>
+          <th class="th1">Range</th>
+          <th class="th1">Unit</th>
+          <th class="th1">Location</th>
+        </tr>
+        <tr *ngFor="let probe of probes">
+          <td class="th1"><div class="tooltip"><span class="tooltiptext">{{probe.description}}</span>{{probe.name}}</div></td>
+          <td class="th1">{{probe.model}}</td>
+          <td class="th1">{{probe.type}}</td>
+          <td class="th1">{{probe.range_from}}-{{probe.range_to}}</td>
+          <td class="th1">{{probe.unit}}</td>
+          <td class="th1">{{probe.location}}</td>
+        </tr>
+      </table>
+    </div>
+  </ng-template>
 </div>
+
+
+
+
 
 <ng-template #loggedOut>
   Please login. <a href="http://localhost:4200/auth/login"><button class="btn btn-secondary">Login</button></a>
