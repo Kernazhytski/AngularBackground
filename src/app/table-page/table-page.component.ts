@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { delay } from 'rxjs/internal/operators/delay';
 import {TokenStorageService} from "../auth/token-storage.service";
 import { Probe } from '../entities/Probe';
 import { UserService } from '../services/user.service';
@@ -16,6 +17,7 @@ export class TablePageComponent implements OnInit{
   constructor(private token: TokenStorageService,private userService: UserService) { }
 
   ngOnInit(): void {
+    delay(500)
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),

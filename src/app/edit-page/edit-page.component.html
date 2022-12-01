@@ -13,46 +13,52 @@
 <div class="parent" name="form" >
   <div class="center">
     <label class="lable1">Edit</label>
-    <form>
-      <label for="username">Name*</label>
-      <input type="text" class="input" id="username" name="username">
+    <form >
+      <label for="name">Name*</label>
+      <input #name type="text" class="input" id="name" name="name" value="{{probe[0].name}}" >
 
       <br>
 
       <label for="model">Model*</label>
-      <input type="text" class="input" id="model" name="model">
+      <input #model type="text" class="input" id="model" name="model" value="{{probe[0].model}}">
 
       <br>
 
       <label>Range</label>
-      <input type="number" step="1" min="1" value="45" id="range_to" name="range-to" class="select2"/>
+      <input type="number" step="1" #range_to min="range_from.value" value="{{probe[0].range_to}}" id="range_to"  name="range_to" class="select2" />
       <label class="littlelable" for="range_to">To</label>
-      <input type="number" step="1" min="1" value="15" id="range_from" name="range-to" class="select"/>
+      <input type="number" step="1" #range_from value="{{probe[0].range_from}}" id="range_from" name="rang_from" class="select" />
       <label class="littlelable" for="range_from">From</label>
 
       <br>
-
       <label for="type">Type*</label>
-      <select type="number" step="1" min="1" value="45" id="type" name="type" class="select3"></select>
+      <select   id="type" name="type" class="select3" #type>
+        <option *ngFor="let type of types" value="{{type.type_of_probes}}" [selected]="type.type_of_probes==probe[0].type">{{type.type_of_probes}}</option>
+      </select>
+
 
       <br>
 
       <label for="unit">Unit*</label>
-      <select type="number" step="1" min="1" value="45" id="unit" name="unit" class="select3"></select>
+      <select  id="unit" name="unit" class="select3" #unit>
+        <option *ngFor="let unit of units" value="{{unit.unit_of_probes}}" [selected]="unit.unit_of_probes==probe[0].unit">{{unit.unit_of_probes}}</option>
+      </select>
 
       <br>
 
       <label for="location">Location</label>
-      <input type="text" class="input" id="location" name="location">
+      <input #location type="text" class="input" id="location" name="location" value="{{probe[0].location}}">
+
 
       <br>
 
       <label for="discription">Description</label>
-      <textarea type="text" class="input2" id="discription" name="discription"></textarea>
+      <textarea #discription type="text" class="input2" id="discription" name="discription">{{probe[0].description}}</textarea>
 
-      <button class="button_1">Save</button>
-      <button class="button_2">Cancel</button>
-
+      <button type="button" class="button_1" (click)="onSubmit(name.value,location.value,type.value,discription.value,model.value,unit.value,range_from.value,range_to.value)">Save</button>
+      <button type="button" class="button_2" (click)="cancel()">Cancel</button>
+      <br>
+      <label class="errorLable">{{this.validation}}</label>
     </form>
   </div>
 </div>

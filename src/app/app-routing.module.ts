@@ -16,8 +16,9 @@ const routes: Routes = [
     component: AddPageComponent
   },
   {
-    path: 'table/edit',
-    component: EditPageComponent
+    path: 'table/edit/:id',
+    component: EditPageComponent,
+    data: {breadcrumbs: 'Profile info'}
   },
   {
     path: 'auth/login',
@@ -37,7 +38,7 @@ const routes: Routes = [
 export class AppRoutingModule {
   constructor(){}
 
-  
+
 }
 
 

@@ -3,25 +3,31 @@
     <label class="lable1">Add</label>
 
     <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
-
-    <table  class="styled-table">
+    <p>adas</p>
+    <table  class="table1">
       <tr>
-        <th>Name</th>
-        <th>Model</th>
-       <th>Type</th>
-        <th>Range</th>
-        <th>Unit</th>
-        <th>Location</th>
+        <th class="invisTable"></th>
+        <th class="th1">Name</th>
+        <th class="th1">Model</th>
+        <th class="th1">Type</th>
+        <th class="th1">Range</th>
+        <th class="th1">Unit</th>
+        <th class="th1">Location</th>
+        <th class="invisTable"></th>
       </tr>
       <tr *ngFor="let probe of probes">
-        <td>{{probe.name}}</td>
-        <td>{{probe.model}}</td>
-        <td>{{probe.type}}</td>
-        <td>{{probe.range_from}}-{{probe.range_to}}</td>
-        <td>{{probe.unit}}</td>
-        <td>{{probe.location}}</td>
+        <td class="invisTable"></td>
+        <td class="th1"><a href="http://localhost:4200/table/edit/{{probe.id}}">{{probe.name}}</a></td>
+        <td class="th1">{{probe.model}}</td>
+        <td class="th1">{{probe.type}}</td>
+        <td class="th1">{{probe.range_from}}-{{probe.range_to}}</td>
+        <td class="th1">{{probe.unit}}</td>
+        <td class="th1">{{probe.location}}</td>
+        <td class="invisTable"></td>
       </tr>
     </table>
+
+    <a href="http://localhost:4200/table/add"><button class="button_1">Add Sensor</button></a>
 
 
 

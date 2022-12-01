@@ -15,45 +15,51 @@
     <label class="lable1">Add</label>
     <form>
       <label for="username">Name*</label>
-      <input type="text" class="input" id="username" name="username">
+      <input type="text" #name class="input" id="username" name="username">
 
       <br>
 
       <label for="model">Model*</label>
-      <input type="text" class="input" id="model" name="model">
+      <input type="text" #model class="input" id="model" name="model">
 
       <br>
 
       <label>Range</label>
-      <input type="number" step="1" min="1" value="45" id="range_to" name="range-to" class="select2"/>
+      <input type="number" step="1" #range_to min="1" value="45" id="range_to" name="range-to" class="select2"/>
       <label class="littlelable" for="range_to">To</label>
-      <input type="number" step="1" min="1" value="15" id="range_from" name="range-to" class="select"/>
+      <input type="number" step="1" #range_from min="1" value="15" id="range_from" name="range-to" class="select"/>
       <label class="littlelable" for="range_from">From</label>
 
       <br>
 
       <label for="type">Type*</label>
-      <select type="number" step="1" min="1" value="45" id="type" name="type" class="select3"></select>
+      <select type="number" step="1" #type min="1" value="45" id="type" name="type" class="select3">
+        <option *ngFor="let type of types" value="{{type.type_of_probes}}" >{{type.type_of_probes}}</option>
+      </select>
 
       <br>
 
       <label for="unit">Unit*</label>
-      <select type="number" step="1" min="1" value="45" id="unit" name="unit" class="select3"></select>
+      <select type="number" step="1" #unit min="1" value="45" id="unit" name="unit" class="select3">
+        <option *ngFor="let unit of units" value="{{unit.unit_of_probes}}">{{unit.unit_of_probes}}</option>
+      </select>
 
       <br>
 
       <label for="location">Location</label>
-      <input type="text" class="input" id="location" name="location">
+      <input type="text" class="input" #location id="location" name="location">
 
       <br>
 
       <label for="discription">Description</label>
-      <textarea type="text" class="input2" id="discription" name="discription"></textarea>
+      <textarea type="text" #discription class="input2" id="discription" name="discription"></textarea>
 
-      <button class="button_1">Save</button>
-      <button class="button_2">Cancel</button>
-
+      <button class="button_1" (click)="onSubmit(name.value,location.value,type.value,discription.value,model.value,unit.value,range_from.value,range_to.value)">Save</button>
+      <button class="button_2" (click)="cancel()">Cancel</button>
+      <br>
+      <label class="errorLable">{{this.validation}}</label>
     </form>
+
   </div>
 </div>
 </body>
