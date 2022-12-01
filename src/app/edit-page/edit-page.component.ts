@@ -33,9 +33,6 @@ export class EditPageComponent implements OnInit {
         this.units = this.a[0];
         this.types = this.a[1];
         this.probe = this.a[2];
-        console.log(this.probe)
-        console.log(this.units)
-        console.log(this.types)
       },
       error => {
         this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;

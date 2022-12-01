@@ -18,7 +18,6 @@ export class UserService {
   constructor(private http: HttpClient,private token: TokenStorageService) { }
 
   getProbesBoard() {
-    console.log("------")
     return this.http.get<Probe[]>(this.tableUrl);
   }
 
@@ -39,7 +38,6 @@ export class UserService {
   }
 
   deleteProbe(id:number){
-    console.log("ssssss")
     this.http.delete(this.delUrl+id).subscribe();
   }
 }

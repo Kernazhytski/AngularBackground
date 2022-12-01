@@ -31,8 +31,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('test this form');
-    console.log(this.form);
 
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
@@ -40,11 +38,6 @@ export class LoginComponent implements OnInit {
 
     this.authService.attemptAuth(this.loginInfo).subscribe(
       data => {
-        console.log('1111111111');
-        console.log(data);
-        console.log(data.token);
-        console.log(data.username);
-        console.log(data.roles);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUsername(data.username);
         this.tokenStorage.saveAuthorities(data.roles);

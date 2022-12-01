@@ -2,11 +2,11 @@
 
   <div *ngIf="info.roles == 'ROLE_ADMIN'; else userP">
     <div class="center">
-      <label class="lable1">Add</label>
+      <label class="lable1">Sensor Table</label>
       <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
 
       <input placeholder="enter text to search" class="input_s" #searchInput> <button (click)="search(searchInput.value)" class="button_search"><img width="20" height="20"src="assets/pictures/search.png">Search</button>
-<br><br><br><br>
+      <br><br><br><br>
       <table  class="table1">
         <tr>
           <th class="invisTable"></th>
@@ -30,8 +30,13 @@
         </tr>
       </table>
 
-      <a href="http://localhost:4200/table/add"><button class="button_1">Add Sensor</button></a>
-
+      <a href="http://localhost:4200/table/add" ><button class="button_1">Add Sensor</button></a>
+      <label class="text_total">Total: {{Lib.length}}</label>
+      <button class="button_previous" (click)="prev()">Previous</button>
+      <button class="button_1_p" (click)="b_1()">{{this.b1}}</button>
+      <button class="button_2" (click)="b_2()" [hidden]="!h2" [disabled]="!h2">{{this.b2}}</button>
+      <button class="button_3" (click)="b_3()" [hidden]="!h3" [disabled]="!h3">{{this.b3}}</button>
+      <button class="button_next" (click)="next()">Next</button>
 
 
     </div>
@@ -40,8 +45,9 @@
 
   <ng-template #userP>
     <div class="center">
-      <label class="lable1">Add</label>
+      <label class="lable1">Sensor Table</label>
       <a href="http://localhost:4200/auth/login" (click)="logout()" class="linkLogOut">Logout</a>
+
       <input placeholder="enter text to search" class="input_s" #searchInput> <button (click)="search(searchInput.value)" class="button_search"><img width="20" height="20"src="assets/pictures/search.png">Search</button>
       <br><br><br><br>
       <table  class="table1">
@@ -62,6 +68,15 @@
           <td class="th1">{{probe.location}}</td>
         </tr>
       </table>
+      
+      <label class="text_total">Total: {{Lib.length}}</label>
+      <button class="button_previous" (click)="prev()">Previous</button>
+      <button class="button_1_p" (click)="b_1()">{{this.b1}}</button>
+      <button class="button_2" (click)="b_2()" [hidden]="!h2" [disabled]="!h2">{{this.b2}}</button>
+      <button class="button_3" (click)="b_3()" [hidden]="!h3" [disabled]="!h3">{{this.b3}}</button>
+      <button class="button_next" (click)="next()">Next</button>
+
+
     </div>
   </ng-template>
 </div>

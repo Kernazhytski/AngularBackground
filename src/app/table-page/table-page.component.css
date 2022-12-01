@@ -3,6 +3,8 @@
   font-size: 20px;
   border-collapse: collapse;
   text-align: center;
+  position: absolute;
+
 
 }
 .th1 {
@@ -20,9 +22,9 @@
 .center {
   position: absolute;
   top: 15%;
-  left: 25%;
+  left: 20%;
   align-content: center;
-  width: 50%;
+  width: 60%;
   height: 70%;
 }
 
@@ -50,6 +52,7 @@
   border-radius: 5px 5px 5px 5px;
   background: lightslategray;
   position: absolute;
+  top: 62%;
   width: 150px;
   height: 30px;
   font-size: 20px;
@@ -98,3 +101,71 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.text_total{
+  display: inline-block;
+  font-weight: 1000;
+  font-size: 40px;
+  position: absolute;
+  top:64%;
+  right: 0%;
+}
+
+.button_previous{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  top:62%;
+  left: 47%;
+}
+
+.button_next{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  top:62%;
+  left: 75%;
+}
+
+.button_1_p{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  top:62%;
+  left: 60%;
+}
+.button_2{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  top:62%;
+  left: 65%;
+}
+.button_3{
+  border-radius: 5px 5px 5px 5px;
+  background: lightslategray;
+  position: absolute;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  top:62%;
+  left: 70%;
+}
+
