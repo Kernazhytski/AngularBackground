@@ -27,7 +27,6 @@ export class TablePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    delay(1000)
     this.page = 1;
     this.info = {
       token: this.token.getToken(),
@@ -166,6 +165,7 @@ export class TablePageComponent implements OnInit {
       this.h2 = true;
       this.h3 = true;
     }
+    this.b1=1;this.b2=2;this.b3=3;this.page=1;
     }
 
     insert(){

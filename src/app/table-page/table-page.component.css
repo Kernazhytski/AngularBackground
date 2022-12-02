@@ -92,8 +92,8 @@
 
   /* Position the tooltip */
   position: absolute;
-  left: -400px;
-  right: 200px;
+  left: -325px;
+  right: 175px;
   z-index:1
 
 }
